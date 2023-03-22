@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:students_tracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Students tracker" 
+        Height="600" Width="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="LoginButton"
+                    Content="Log In"
+                    Width="80"
+                    Height="30"
+                    Margin="10" 
+                    Click="LoginButton_Click"/>
+
+            <Button x:Name="RegisterButton"
+                    Content="Register"
+                    Width="80"
+                    Height="30"
+                    Margin="10" 
+                    Click="RegisterButton_Click"/>
+        </StackPanel>
+        <Frame x:Name="Frame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

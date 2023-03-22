@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace students_tracker
+namespace students_tracker.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RegisterPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegisterPage : Page
     {
-        public MainWindow()
+        public RegisterPage()
         {
             InitializeComponent();
-        }
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Content = new Pages.LoginPage();
-        }
-
-        private void RegisterButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Content = new Pages.RegisterPage();
         }
     }
 }
