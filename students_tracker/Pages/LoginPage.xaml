@@ -15,32 +15,33 @@
         </Grid.RowDefinitions>
 
         <TextBlock Margin="10"
-                   Text="Log In"
+                   Text="Авторизація"
                    FontSize="24" 
                    FontFamily="Arial Black"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel>
-                    <TextBlock Text="Login: " Margin="0,10,0,0" FontFamily="Arial" FontSize="14"/>
-                    <TextBlock Text="Password: " Margin="0,15,0,0" FontFamily="Arial" FontSize="14"/>
+                    <TextBlock Text="Логін: " Margin="0,10,0,0" FontFamily="Arial" FontSize="14"/>
+                    <TextBlock Text="Пароль: " Margin="0,15,0,0" FontFamily="Arial" FontSize="14"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBox x:Name="loginTextBox"
+                    <TextBox x:Name="UsernameTextBox"
                      Width="150"
                      Height="25"
                      Margin="5"/>
-                    <PasswordBox x:Name="passwordPasswordBox"
+                    <PasswordBox x:Name="PasswordPasswordBox"
                          Width="150"
                          Height="25"
                          Margin="5"/>
                 </StackPanel>
             </StackPanel>
-            <Button x:Name="lognInButton"
-                    Width="70"
+            <Button x:Name="LogInButton"
+                    Width="100"
                     Height="30"
                     Margin="10"
-                    Content="Log In"/>
+                    Content="Авторизуватися"
+                    Click="LogInButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

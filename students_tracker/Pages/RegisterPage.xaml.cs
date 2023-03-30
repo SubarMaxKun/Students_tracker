@@ -24,5 +24,11 @@ namespace students_tracker.Pages
         {
             InitializeComponent();
         }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Method will be improved in the future
+            Authentication.WriteUserData.Write(UsernameTextBox.Text, PasswordPasswordBox.Password);
+        }
     }
 }

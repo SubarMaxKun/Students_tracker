@@ -25,7 +25,7 @@ namespace students_tracker
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Content = new Pages.LoginPage();
         }

@@ -24,5 +24,10 @@ namespace students_tracker.Pages
         {
             InitializeComponent();
         }
+
+        private void LogInButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Method intentionally left empty.
+        }
     }
 }
