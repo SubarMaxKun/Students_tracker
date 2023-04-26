@@ -1,4 +1,6 @@
-﻿using System;
+﻿using students_tracker.Authentication;
+using students_tracker.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,8 +29,31 @@ namespace students_tracker.Pages
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            // Method will be improved in the future
-            Authentication.WriteUserData.Write(UsernameTextBox.Text, PasswordPasswordBox.Password);
+            CheckUsername checkUsername = new CheckUsername();
+            
+            // Check if username is already taken
+            if(!checkUsername.Check(UsernameTextBox.Text))
+            {
+                // Check if password is long enough
+                if(PasswordPasswordBox.Password.Length>=8)
+                {
+                    // Write user's data to file
+                    WriteUserData.Write(UsernameTextBox.Text, PasswordPasswordBox.Password);
+                    
+                    // Open menu window and close this one
+                    MenuWindow menuWindow = new MenuWindow();
+                    menuWindow.Show();
+                    Window.GetWindow(this).Close();
+                }
+                else
+                {
+                    MessageBox.Show("Пароль повинен містити не менше 8 символів!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Користувач вже існує!");
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using students_tracker.Authentication;
+using students_tracker.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +29,21 @@ namespace students_tracker.Pages
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            // Method intentionally left empty.
+            CheckUserData checkUserData = new CheckUserData();
+
+            // Check if user's data is correct
+            if (checkUserData.Check(UsernameTextBox.Text, PasswordPasswordBox.Password))
+            {
+                // Open menu window and close this one
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.Show();
+                Window.GetWindow(this).Close();
+            }
+            else
+            {
+                // Needs future upgrade with functionality
+                MessageBox.Show("Wrong username or password.");
+            }
         }
     }
 }
