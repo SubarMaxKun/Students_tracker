@@ -29,8 +29,8 @@ namespace students_tracker.Pages
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            CheckUsername checkUsername = new CheckUsername();
-            
+            CheckUsername checkUsername = new();
+
             // Check if username is already taken
             if(!checkUsername.Check(UsernameTextBox.Text))
             {
@@ -39,9 +39,11 @@ namespace students_tracker.Pages
                 {
                     // Write user's data to file
                     WriteUserData.Write(UsernameTextBox.Text, PasswordPasswordBox.Password);
-                    
+
+                    // Menu window initialization
+                    MenuWindow menuWindow = new(UsernameTextBox.Text);
+
                     // Open menu window and close this one
-                    MenuWindow menuWindow = new MenuWindow();
                     menuWindow.Show();
                     Window.GetWindow(this).Close();
                 }

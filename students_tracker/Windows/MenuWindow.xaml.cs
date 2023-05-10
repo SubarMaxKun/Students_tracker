@@ -19,9 +19,30 @@ namespace students_tracker.Windows
     /// </summary>
     public partial class MenuWindow : Window
     {
-        public MenuWindow()
+        private string username;
+
+        public MenuWindow(string Username)
         {
             InitializeComponent();
+            username = Username;
+            GreetingsTextBlock.Text = "Із поверненням: " + username;
+
+            // Check if user is admin
+            if (username == "admin")
+            {
+                AddGroup.Visibility = Visibility.Visible;
+                DeleteGroup.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void AddGroup_Click(object sender, RoutedEventArgs e)
+        {
+            // Method intentionally left empty.
+        }
+
+        private void DeleteGroup_Click(object sender, RoutedEventArgs e)
+        {
+            // Method intentionally left empty.
         }
     }
 }

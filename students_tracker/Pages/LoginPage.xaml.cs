@@ -29,13 +29,15 @@ namespace students_tracker.Pages
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            CheckUserData checkUserData = new CheckUserData();
+            CheckUserData checkUserData = new();
 
             // Check if user's data is correct
             if (checkUserData.Check(UsernameTextBox.Text, PasswordPasswordBox.Password))
             {
+                // Menu window initialization
+                MenuWindow menuWindow = new(UsernameTextBox.Text);
+
                 // Open menu window and close this one
-                MenuWindow menuWindow = new MenuWindow();
                 menuWindow.Show();
                 Window.GetWindow(this).Close();
             }

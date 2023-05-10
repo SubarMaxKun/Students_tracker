@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:students_tracker.Windows"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Menu" 
+        Height="900" Width="1000">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="GreetingsTextBlock"
+                   TextWrapping="Wrap"
+                   Margin="10"
+                   FontSize="12" 
+                   FontFamily="Arial Black"/>
         
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,150,0,0" Grid.Row="1">
+            <Button x:Name="AddGroup"
+                    Content="Додати групу"
+                    Width="100"
+                    Height="30"
+                    Margin="5" 
+                    Visibility="Hidden"
+                    Click="AddGroup_Click"/>
+            <Button x:Name="DeleteGroup"
+                    Content="Видалити групу"
+                    Width="100"
+                    Height="30"
+                    Margin="5" 
+                    Visibility="Hidden"
+                    Click="DeleteGroup_Click"/>
+        </StackPanel>
+        <Frame x:Name="Frame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

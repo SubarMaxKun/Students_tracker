@@ -27,12 +27,12 @@ namespace students_tracker
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new Pages.LoginPage();
+            ContentFrame.Content = new Pages.LoginPage();
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new Pages.RegisterPage();
+            ContentFrame.Content = new Pages.RegisterPage();
         }
     }
 }

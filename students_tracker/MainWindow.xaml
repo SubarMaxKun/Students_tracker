@@ -30,6 +30,6 @@
                     Margin="10" 
                     Click="RegisterButton_Click"/>
         </StackPanel>
-        <Frame x:Name="Frame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
