@@ -19,20 +19,24 @@ namespace students_tracker.Windows
     /// </summary>
     public partial class MenuWindow : Window
     {
-        private string username;
 
         public MenuWindow(string Username)
         {
             InitializeComponent();
-            username = Username;
-            GreetingsTextBlock.Text = "Із поверненням: " + username;
+            GreetingsTextBlock.Text = "Із поверненням: " + Username;
 
             // Check if user is admin
-            if (username == "admin")
+            if (Username == "admin")
             {
                 AddGroup.Visibility = Visibility.Visible;
                 DeleteGroup.Visibility = Visibility.Visible;
             }
+        }
+
+        private void ShowGroups_Click(object sender, RoutedEventArgs e)
+        {
+            // Method intentionally left empty.
+            ContentFrame.Content = new Pages.ShowGroupsPage();
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
@@ -44,5 +48,6 @@ namespace students_tracker.Windows
         {
             // Method intentionally left empty.
         }
+
     }
 }

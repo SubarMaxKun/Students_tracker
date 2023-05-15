@@ -25,21 +25,27 @@
                    FontFamily="Arial Black"/>
         
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,150,0,0" Grid.Row="1">
+            <Button x:Name="ShowGroups"
+                    Content="Переглянути групи"
+                    Width="150"
+                    Height="30"
+                    Margin="5" 
+                    Click="ShowGroups_Click"/>
             <Button x:Name="AddGroup"
                     Content="Додати групу"
-                    Width="100"
+                    Width="150"
                     Height="30"
                     Margin="5" 
                     Visibility="Hidden"
                     Click="AddGroup_Click"/>
             <Button x:Name="DeleteGroup"
                     Content="Видалити групу"
-                    Width="100"
+                    Width="150"
                     Height="30"
                     Margin="5" 
                     Visibility="Hidden"
                     Click="DeleteGroup_Click"/>
         </StackPanel>
-        <Frame x:Name="Frame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="ContentFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

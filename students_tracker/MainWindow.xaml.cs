@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using students_tracker.Persistence;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,18 @@ namespace students_tracker
         public MainWindow()
         {
             InitializeComponent();
+
+            try
+            {
+                DatabaseConnection databaseConnection = new();
+                databaseConnection.Connect();
+                databaseConnection.Disconnect();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Неможливо встановити з'єднання із базою даних!");
+                Close();
+            }
         }
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
