@@ -42,11 +42,13 @@ namespace students_tracker.Windows
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
             // Method intentionally left empty.
+            // TODO: Add group
         }
 
         private void DeleteGroup_Click(object sender, RoutedEventArgs e)
         {
             // Method intentionally left empty.
+            // TODO: Delete group
         }
 
     }

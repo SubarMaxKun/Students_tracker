@@ -9,6 +9,6 @@
       Title="ShowGroupsPage">
 
     <Grid>
-        <StackPanel x:Name="ContententStackPanel"/>
+        <WrapPanel x:Name="ContentWrapPanel" Orientation="Horizontal"/>
     </Grid>
 </Page>
