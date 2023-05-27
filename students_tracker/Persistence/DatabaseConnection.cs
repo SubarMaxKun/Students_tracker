@@ -18,6 +18,15 @@ namespace students_tracker.Persistence
             connection.Open();
         }
 
+        public object Query(string sql)
+        {
+            MySqlConnection connection = new(connectionString);
+            connection.Open();
+            MySqlCommand command = new(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
         public void Disconnect()
         {
             MySqlConnection connection = new(connectionString);

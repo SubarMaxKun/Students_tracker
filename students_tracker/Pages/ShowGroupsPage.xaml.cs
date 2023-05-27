@@ -2,6 +2,7 @@
 using students_tracker.Persistence;
 using students_tracker.Windows;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -28,34 +29,28 @@ namespace students_tracker.Pages
         public ShowGroupsPage()
         {
             InitializeComponent();
-            
-            // Create and open connection to database
-            MySqlConnection connection = new(ConfigurationManager.ConnectionStrings["students_tracker.Properties.Settings.students_trackerConnectionString"].ConnectionString);
-            connection.Open();
+            List<string> groups = ListGroups.listGroups();
 
-            // Get all tables from database
-            string sql = "SHOW TABLES";
-            MySqlCommand cmd = new(sql, connection);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            // Shitty realization of showing all groups as buttons, but
-            // atleast it works
-            while (rdr.Read())
+            // Show all groups and add buttons
+            for (int i = 0; i < groups.Count; i++)
             {
-                Button button = new();
-                {
-                    button.Content = rdr.GetString(0);
-                    button.Width = 100;
-                    button.Height = 100;
-                    button.Margin = new Thickness(10);
-                    button.Click += new RoutedEventHandler(ShowGroup_Click);
-                }
-
+                Button button = CreateButton(groups, i);
                 ContentWrapPanel.Children.Add(button);
             }
+        }
 
-            // Close connection to database
-            connection.Close();
+        private Button CreateButton(List<string> groups, int i)
+        {
+            Button button = new();
+            {
+                button.Content = groups[i];
+                button.Width = 100;
+                button.Height = 100;
+                button.Margin = new Thickness(10);
+                button.Click += new RoutedEventHandler(ShowGroup_Click);
+            }
+
+            return button;
         }
 
         private void ShowGroup_Click(object sender, RoutedEventArgs e)

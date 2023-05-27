@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using students_tracker.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -26,18 +27,12 @@ namespace students_tracker.Windows
             InitializeComponent();
 
             // TODO: Upgrade realisation
+            // Create connection to database
+            DatabaseConnection databaseConnection = new();
 
-            // Create and open connection to database
-            MySqlConnection connection = new(ConfigurationManager.ConnectionStrings["students_tracker.Properties.Settings.students_trackerConnectionString"].ConnectionString);
-            connection.Open();
-            
-            // Get all students from database
-            string sql = "SELECT * FROM " + group;
-            MySqlCommand cmd = new(sql, connection);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            
             // Put all students from database into datagrid
-            DataGrid.ItemsSource = rdr;
+            DataGrid.ItemsSource = (System.Collections.IEnumerable)databaseConnection.Query("SELECT * FROM " + group);
+            databaseConnection.Disconnect();
         }
     }
 }
