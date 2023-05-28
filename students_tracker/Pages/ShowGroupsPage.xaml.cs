@@ -29,7 +29,7 @@ namespace students_tracker.Pages
         public ShowGroupsPage()
         {
             InitializeComponent();
-            List<string> groups = ListGroups.listGroups();
+            List<string> groups = ListGroups.List();
 
             // Show all groups and add buttons
             for (int i = 0; i < groups.Count; i++)

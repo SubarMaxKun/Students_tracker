@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:students_tracker.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ShowGroupsPage">
+      Title="ShowGroups">
 
     <Grid>
         <WrapPanel x:Name="ContentWrapPanel" Orientation="Horizontal"/>

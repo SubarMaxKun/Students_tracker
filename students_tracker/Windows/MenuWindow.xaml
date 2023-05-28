@@ -31,13 +31,13 @@
                     Height="30"
                     Margin="5" 
                     Click="ShowGroups_Click"/>
-            <Button x:Name="AddGroup"
+            <Button x:Name="CreateGroup"
                     Content="Додати групу"
                     Width="150"
                     Height="30"
                     Margin="5" 
                     Visibility="Hidden"
-                    Click="AddGroup_Click"/>
+                    Click="CreateGroup_Click"/>
             <Button x:Name="DeleteGroup"
                     Content="Видалити групу"
                     Width="150"

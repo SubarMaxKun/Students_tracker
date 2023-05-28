@@ -14,13 +14,12 @@ namespace students_tracker.Persistence
     internal class ListGroups
     {
         //list groups
-        public static List<string> listGroups()
+        public static List<string> List()
         {
             List<string> groups = new();
            
             // Create and open connection to database
             DatabaseConnection databaseConnection = new();
-            databaseConnection.Connect();
 
             // Get all groups from database and put them into list
             MySqlDataReader reader = (MySqlDataReader)databaseConnection.Query("SHOW TABLES");

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using students_tracker.Persistence;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace students_tracker.Windows
             // Check if user is admin
             if (Username == "admin")
             {
-                AddGroup.Visibility = Visibility.Visible;
+                CreateGroup.Visibility = Visibility.Visible;
                 DeleteGroup.Visibility = Visibility.Visible;
             }
         }
@@ -39,17 +40,16 @@ namespace students_tracker.Windows
             ContentFrame.Content = new Pages.ShowGroupsPage();
         }
 
-        private void AddGroup_Click(object sender, RoutedEventArgs e)
+        private void CreateGroup_Click(object sender, RoutedEventArgs e)
         {
             // Method intentionally left empty.
-            // TODO: Add group
+            ContentFrame.Content = new Pages.CreateGroupPage();
         }
 
         private void DeleteGroup_Click(object sender, RoutedEventArgs e)
         {
             // Method intentionally left empty.
-            // TODO: Delete group
+            ContentFrame.Content = new Pages.DeleteGroupPage();
         }
-
     }
 }
